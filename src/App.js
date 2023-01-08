@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "./nature.jpg";
 import {
   Container,
   Box,
@@ -22,12 +23,24 @@ const App = () => {
   return (
     <>
       <Container
-        maxWidth={false}
-        sx={{ backgroundColor: "#ffe082", minHeight: "90vh" }}
+        maxWidth={"xl"}
+        sx={{
+          backgroundImage: `url(${Image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh",
+        }}
       >
         <Box sx={{ width: "100%", marginBottom: 3, mt: 3 }}>
           <Stack spacing={2} marginTop={5}>
-            <Typography sx={{ textAlign: "center" }}>
+            <Typography
+              sx={{
+                textAlign: "center",
+                color: "#fff",
+                fontSize: "20px",
+                marginTop: 5,
+              }}
+            >
               Random Quote Generator
             </Typography>
           </Stack>
@@ -44,9 +57,21 @@ const App = () => {
             },
           }}
         >
-          <Paper elevation={4} sx={{ display: "grid" }}>
+          <Paper
+            elevation={4}
+            sx={{
+              display: "grid",
+              background: "rgba(255,255,255,0.1)",
+              backdropFilter: "blur(5px)",
+            }}
+          >
             <Typography
-              sx={{ textAlign: "center", marginY: 2, paddingX: "10px  " }}
+              sx={{
+                textAlign: "center",
+                marginY: 2,
+                paddingX: "10px  ",
+                color: "#fff",
+              }}
             >
               {advice}
             </Typography>
