@@ -15,10 +15,14 @@ const App = () => {
     giveAdvice();
   }, []);
   async function giveAdvice() {
-    await axios("https://api.adviceslip.com/advice").then((res) => {
-      console.log(res.data.slip.advice);
-      setAdvice(res.data.slip.advice);
-    });
+    await axios("https://api.adviceslip.com/advice")
+      .then((res) => {
+        console.log(res.data.slip.advice);
+        setAdvice(res.data.slip.advice);
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
   return (
     <>
