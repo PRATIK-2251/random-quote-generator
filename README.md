@@ -4,3 +4,4 @@ Used Technologies :
 
 Used API - https://api.adviceslip.com/advice
 
+Website- https://rand-quote-generate.netlify.app/
